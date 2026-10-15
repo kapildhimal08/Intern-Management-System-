@@ -1,0 +1,126 @@
+/* ---------- Add task button (small) ---------- */
+.tm-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: auto;
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: #142347;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.tm-add-btn:hover { background: #1d3166; }
+
+/* ---------- Modal ---------- */
+.tm-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px;
+  z-index: 9999;
+  overflow-y: auto;
+}
+.tm-modal {
+  background: #fff;
+  width: 100%;
+  max-width: 640px;
+  border-radius: 10px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 80px);
+}
+.tm-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 22px;
+  border-bottom: 1px solid #eceef2;
+}
+.tm-head h3 { margin: 0; font-size: 18px; font-weight: 500; color: #1f2937; }
+.tm-x {
+  all: unset;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  color: #6b7280;
+  padding: 4px 8px;
+}
+.tm-x:hover { color: #111; }
+
+.tm-body {
+  padding: 16px 22px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.tm-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  align-items: start;
+  gap: 12px;
+}
+.tm-row > label {
+  font-size: 14px;
+  color: #374151;
+  padding-top: 9px;
+}
+.tm-field { display: flex; flex-direction: column; gap: 4px; }
+.tm-field input,
+.tm-field select,
+.tm-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #1f2937;
+  background: #f3f4f6;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  outline: none;
+}
+.tm-field input:focus,
+.tm-field select:focus,
+.tm-field textarea:focus {
+  background: #fff;
+  border-color: #f59e0b;
+}
+.tm-field input:disabled { color: #6b7280; cursor: not-allowed; }
+.tm-field textarea { resize: vertical; min-height: 80px; }
+.tm-error { margin: 0; font-size: 12px; color: #dc2626; }
+
+.tm-foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 14px 22px;
+  border-top: 1px solid #eceef2;
+}
+.tm-btn {
+  width: auto;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  color: #374151;
+}
+.tm-btn:hover { background: #f9fafb; }
+.tm-btn-primary { background: #142347; border-color: #142347; color: #fff; }
+.tm-btn-primary:hover { background: #1d3166; }
+
+@media (max-width: 520px) {
+  .tm-row { grid-template-columns: 1fr; gap: 4px; }
+  .tm-row > label { padding-top: 0; }
+}
